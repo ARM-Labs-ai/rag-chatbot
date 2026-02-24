@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "CAFÉ/CEPEA: Robusta inicia a semana com forte queda de 5% Cepea, 12  Os preços domésticos do café iniciaram a semana com novas quedas, sobretudo para o robusta. A pressão veio do avanço da colheita e do recuo externo. Agentes relatam baixo volume de negociações no mercado spot nacional. O Indicador CEPEA/ESALQ do robusta tipo 6, peneira 13 acima, caiu expressivos 4,98% em relação à última sexta-feira, fechando a R$ 1.583,74/saca de 60 kg nesta segunda-feira, 12; o tipo 7/8 desvalorizou-se 3,93%, a R$ 1.557,50/sc  à vista e a retirar no Espírito Santo. Para o arábica, o Indicador CEPEA/ESALQ do tipo 6, bebida dura para melhor, posto na capital paulista, encerrou a R$ 2.528,62/sc de 60 kg nesta segunda, baixa de 0,96% sobre sexta. Na Bolsa de Nova York (ICE Futures), o contrato julho/25 do arábica fechou esta segunda a 372,95 centavos de dólar por libra-peso, perdendo 1.480 pontos (3,82%) sobre a sexta. Além da expectativa de aumento da oferta, a valorização do dólar frente ao Real reforçou o movimento de queda externo. A moeda norte-americana foi cotada a R$ 5,686, alta de 0,54% em igual comparativo. Análise diária do mercado cafeeiro elaborada pela Equipe Café CEPEA/ESALQ. Equipe: Dra. Margarete Boteon, Anne Bianchi, Luiz Silvério e Renato Garcia Ribeiro",
+      "metadata": {
+        "title": "CAFÉ/CEPEA: Mesmo com alta externa, preço do arábica recua no BR", 
+        "authors": ["Dra. Margarete Boteon", "Carolina Sales", "Renato Garcia Ribeiro", "Fernanda Geraldini"], 
+        "publicationDate": "2016-03-01" 
+      }
+    }
+  ],
+  "chunkSize": 1000,
+  "chunkOverlap": 200
+}

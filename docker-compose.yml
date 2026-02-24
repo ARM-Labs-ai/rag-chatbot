@@ -1,0 +1,36 @@
+services:
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    networks:
+      - rag-api-v3
+    environment:
+      - IS_PERSISTENT=TRUE
+
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   # ports:
+  #   #   - "11434:11434"
+  #   volumes:
+  #     - ollama_data:/root/.ollama
+  #   networks:
+  #     - rag-api-v3
+  #   # Para GPU NVIDIA, descomente:
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - driver: nvidia
+  #             count: all
+  #             capabilities: [gpu]
+
+volumes:
+  chroma_data:
+  ollama_data:
+
+networks:
+  rag-api-v3:
+    driver: bridge
