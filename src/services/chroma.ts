@@ -7,6 +7,12 @@ const CHROMA_URL = process.env.CHROMA_URL;
 
 export const chromaClient = new ChromaClient({ path: CHROMA_URL });
 
+export const embeddingFunction = {
+  generate: async (texts: string[]) => {
+    return embeddings.embedDocuments(texts);
+  }
+};
+
 export const embeddings = new OllamaEmbeddings({
   model: process.env.OLLAMA_EMBED_MODEL,
   baseUrl: process.env.OLLAMA_URL,

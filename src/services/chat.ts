@@ -2,7 +2,7 @@ import { ChatOllama } from "@langchain/ollama";
 import { Collection } from "chromadb";
 import { v4 as uuidv4 } from "uuid";
 import { ChatMessage } from "../types/index.js";
-import { chromaClient, getVectorStore } from "./chroma.js";
+import { chromaClient, getVectorStore, embeddingFunction } from "./chroma.js";
 
 const CHAT_COLLECTION = process.env.CHROMA_CHAT_COLLECTION ?? "chat_history";
 
@@ -14,7 +14,9 @@ const llm = new ChatOllama({
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 async function getChatCollection(): Promise<Collection> {
-  return chromaClient.getOrCreateCollection({ name: CHAT_COLLECTION });
+  return chromaClient.getOrCreateCollection({
+    name: CHAT_COLLECTION, embeddingFunction
+  });
 }
 
 async function persistMessage(
@@ -44,7 +46,9 @@ export async function startSession(
   collectionName: string
 ): Promise<{ sessionId: string; collectionName: string }> {
   // Verifica se a collection de documentos existe antes de criar a sessão
-  await chromaClient.getCollection({ name: collectionName });
+  await chromaClient.getCollection({
+    name: collectionName, embeddingFunction
+  });
   return { sessionId: uuidv4(), collectionName };
 }
 

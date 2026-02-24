@@ -106,6 +106,9 @@ router.post(
     try {
       const { sessionId } = req.params;
       const { message, k } = req.body;
+      console.log("===> sessionId", sessionId);
+      console.log("===> message", message);
+      console.log("===> k", k);
 
       // Busca o collectionName da sessão no histórico persistido
       const collectionName = await getSessionCollectionName(sessionId);
