@@ -1,9 +1,11 @@
 import "dotenv/config";
 import express from "express";
 import { config } from "@config/application";
+import { router as collectionsRouter } from "@/adapters/in/http/routes";
 
 export const app = express()
   .use(express.json())
+  .use("/collections", collectionsRouter)
   .listen(config.PORT, () => {
     console.log(`✅  API:      http://localhost:${config.PORT}`);
     console.log(`📖  Swagger:  http://localhost:${config.PORT}/docs`);
