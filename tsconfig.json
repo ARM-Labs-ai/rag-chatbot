@@ -7,7 +7,9 @@
     "outDir": "dist",
     "paths": {
       "@/*": ["./*"],
-      "@config/*": ["./config/*"]
+      "@config/*": ["./config/*"],
+      "@infra/*": ["./infrastructure/*"],
+      "@use-cases/*": ["./use-cases/*"]
     },
     "resolveJsonModule": true,
     "rootDir": "src",

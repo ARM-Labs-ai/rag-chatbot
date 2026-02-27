@@ -10,6 +10,8 @@ export default defineConfig({
     alias: {
       "@/": new URL("./src/", import.meta.url).pathname,
       "@config/": new URL("./src/config", import.meta.url).pathname,
+      "@infrastructure/": new URL("./src/infrastructure", import.meta.url).pathname,
+      "@use-cases/": new URL("./src/use-cases", import.meta.url).pathname,
     },
     globals: true,
   },
