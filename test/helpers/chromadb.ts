@@ -1,7 +1,7 @@
 import { ChromaClient, type Collection } from "chromadb";
 
 const chroma = new ChromaClient({
-  host: "http://localhost",
+  host: "localhost",
   port: 8000,
 });
 
