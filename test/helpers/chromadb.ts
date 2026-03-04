@@ -6,5 +6,9 @@ const chroma = new ChromaClient({
 });
 
 export async function createCollection(name: string = "my_collection"): Promise<Collection> {
-  return chroma.createCollection({ name });
+  return chroma.getOrCreateCollection({ name });
+}
+
+export async function clearDatabase(): Promise<any> {
+  return chroma.reset();
 }

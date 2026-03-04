@@ -13,3 +13,7 @@ export async function list(): Promise<Collection[]> {
 export async function create(collectionName: string): Promise<Collection> {
   return chroma.getOrCreateCollection({ name: collectionName });
 }
+
+export async function remove(collectionName: string): Promise<void> {
+  chroma.deleteCollection({ name: collectionName });
+}
