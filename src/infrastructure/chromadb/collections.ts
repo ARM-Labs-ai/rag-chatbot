@@ -9,3 +9,7 @@ const chroma = new ChromaClient({
 export async function list(): Promise<Collection[]> {
   return chroma.listCollections();
 }
+
+export async function create(collectionName: string): Promise<Collection> {
+  return chroma.getOrCreateCollection({ name: collectionName });
+}
