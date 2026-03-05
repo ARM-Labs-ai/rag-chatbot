@@ -9,6 +9,12 @@ export async function createCollection(name: string = "my_collection"): Promise<
   return chroma.getOrCreateCollection({ name });
 }
 
-export async function clearDatabase(): Promise<any> {
-  return chroma.reset();
+export async function clearDatabase(): Promise<void[]> {
+  const collections = await chroma.listCollections();
+
+  return Promise.all(collections.map((collection) => deleteCollection(collection.name)));
+}
+
+export async function deleteCollection(name: string = "my_collection"): Promise<void> {
+  return chroma.deleteCollection({ name });
 }

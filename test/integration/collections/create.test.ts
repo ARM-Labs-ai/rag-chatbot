@@ -8,7 +8,7 @@ describe("POST /collections", () => {
       .send({ name: "minha-nova-collection" })
       .set("Content-Type", "application/json");
 
-    //console.log("===> request", res);
     expect(res.statusCode).toEqual(201);
+    expect(res.body._name).toBe("minha-nova-collection");
   });
 });

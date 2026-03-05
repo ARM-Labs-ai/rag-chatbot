@@ -7,7 +7,9 @@
     "build": "tsc",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
-    "test": "vitest"
+    "test": "npm run test:integration",
+    "test:integration": "vitest run --no-file-parallelism",
+    "test:watch": "vitest --no-file-parallelism"
   },
   "dependencies": {
     "@langchain/community": "1.1.17",
