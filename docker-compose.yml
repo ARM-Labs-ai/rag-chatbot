@@ -4,28 +4,31 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - chroma_data:/chroma/chroma
+      - chroma_data:/data
+      - ./docker/chromadb-config.yaml:/chroma/config.yaml:ro
     networks:
       - rag-api-v3
     environment:
       - IS_PERSISTENT=TRUE
+      - CONFIG_PATH=/chroma/config.yaml
+    restart: unless-stopped
 
-  # ollama:
-  #   image: ollama/ollama:latest
-  #   # ports:
-  #   #   - "11434:11434"
-  #   volumes:
-  #     - ollama_data:/root/.ollama
-  #   networks:
-  #     - rag-api-v3
-  #   # Para GPU NVIDIA, descomente:
-  #   deploy:
-  #     resources:
-  #       reservations:
-  #         devices:
-  #           - driver: nvidia
-  #             count: all
-  #             capabilities: [gpu]
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - rag-api-v3
+    # Para GPU NVIDIA, descomente:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 
 volumes:
   chroma_data:

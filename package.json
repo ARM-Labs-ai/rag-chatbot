@@ -12,6 +12,7 @@
     "test:watch": "vitest --no-file-parallelism"
   },
   "dependencies": {
+    "@chroma-core/ollama": "^0.1.8",
     "@langchain/community": "1.1.17",
     "@langchain/core": "1.1.27",
     "@langchain/ollama": "1.2.4",

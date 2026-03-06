@@ -1,5 +1,6 @@
 import { ChromaClient, type Collection } from "chromadb";
 import { config } from "@config/chromadb";
+import { embedder } from "@infra/ollama/embeddings";
 
 const chroma = new ChromaClient({
   host: config.URL,
@@ -11,9 +12,12 @@ export async function list(): Promise<Collection[]> {
 }
 
 export async function create(collectionName: string): Promise<Collection> {
-  return chroma.getOrCreateCollection({ name: collectionName });
+  return chroma.createCollection({
+    name: collectionName,
+    embeddingFunction: embedder,
+  });
 }
 
 export async function remove(collectionName: string): Promise<void> {
-  chroma.deleteCollection({ name: collectionName });
+  return chroma.deleteCollection({ name: collectionName });
 }
