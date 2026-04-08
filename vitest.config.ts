@@ -7,6 +7,7 @@ console.log(new URL("./src/config", import.meta.url).pathname);
 export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
+    setupFiles: ["./test/setup-env.ts"],
     alias: {
       "@/": new URL("./src/", import.meta.url).pathname,
       "@config/": new URL("./src/config", import.meta.url).pathname,
