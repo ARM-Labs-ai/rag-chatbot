@@ -21,3 +21,10 @@ export async function create(collectionName: string): Promise<Collection> {
 export async function remove(collectionName: string): Promise<void> {
   return chroma.deleteCollection({ name: collectionName });
 }
+
+export async function retrieve(collectionName: string): Promise<Collection> {
+  return chroma.getCollection({
+    name: collectionName,
+    embeddingFunction: embedder,
+  });
+}

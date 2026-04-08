@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import { config } from "@config/application";
-import { router as collectionsRouter } from "@/adapters/in/http/routes";
+import { router as collectionsRouter } from "@/adapters/in/http/collectionsRoute";
 
 export const app = express()
   .use(express.json())
