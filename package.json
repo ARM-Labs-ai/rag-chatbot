@@ -7,6 +7,7 @@
     "build": "tsc",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
+    "project:create": "node scripts/create-github-project.mjs",
     "test": "npm run test:integration",
     "test:integration": "vitest run --no-file-parallelism",
     "test:watch": "vitest --no-file-parallelism"
