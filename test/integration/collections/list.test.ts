@@ -1,4 +1,4 @@
-import { app } from "@/index";
+import { app } from "@/app";
 import request from "supertest";
 import { clearDatabase, createCollection } from "../../helpers/chromadb";
 

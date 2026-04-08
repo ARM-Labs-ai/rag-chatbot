@@ -1,4 +1,4 @@
-import { app } from "@/index";
+import { app } from "@/app";
 import request from "supertest";
 
 describe("POST /collections", () => {
